@@ -1,0 +1,14 @@
+node_modules/
+dist/
+release/
+out/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
+Desktop.ini
+
+# Local sparse checkout of the upstream project; it has its own Git metadata.
+/capri-companion/

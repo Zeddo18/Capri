@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0812" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'" />
+  <title>Neon Companion</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg class="filters" aria-hidden="true"><filter id="keyBlack" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  1.2 1.2 1.2 0 -0.12" /></filter></svg>
+  <div class="companion">
+    <section class="chat" aria-label="Companion chat">
+      <div class="chat-header"><span class="mini-mark">C</span><div><b>CAPRI</b><small>YOUR DESKTOP COMPANION</small></div><span class="online"><i></i> ONLINE</span><button class="icon-button close" title="Close chat">×</button></div>
+      <div class="messages"><div class="message assistant-message">Hey. I’m right here.<br><small>Let’s make this desktop ours.</small></div></div>
+      <div class="status">STANDING BY</div>
+      <form id="composer"><input id="message" autocomplete="off" placeholder="Say something..." aria-label="Message Capri" /><button title="Send message">↗</button></form>
+    </section>
+    <div class="speech"><span class="speech-dot"></span> Hey, choom. <small>Double-click me to chat</small></div>
+    <div class="character" aria-label="Animated cyberpunk companion">
+      <button class="character-button" title="Open chat" aria-label="Open chat">
+        <div class="portrait" role="img" aria-label="Capri pose from the reference image supplied by the user">
+          <img class="pose-sheet" src="../assets/references/poses.jpg" alt="" />
+          <div class="scan"></div>
+        </div>
+      </button>
+      <div class="nameplate"><span>CAPRI</span><i></i> <small>CONNECTED</small></div>
+      <div class="quick-actions"><button class="teleport" title="Teleport (Ctrl+Alt+P)">⌁</button><button class="hide" title="Hide companion (Ctrl+Alt+Space)">−</button></div>
+    </div>
+    <div class="corner-note">LOCAL BUILD 0.1 <span>·</span> HOTKEY: CTRL + ALT + SPACE</div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

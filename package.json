@@ -1,0 +1,13 @@
+{
+  "name": "capri-desktop-companion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An unofficial Capri-inspired Windows desktop companion",
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^45.0.0"
+  }
+}
