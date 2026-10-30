@@ -10,5 +10,7 @@ coverage/
 Thumbs.db
 Desktop.ini
 
-# Local sparse checkout of the upstream project; it has its own Git metadata.
-/capri-companion/
+# Runtime dependencies and outputs for the upstream submodule.
+/capri-companion/node_modules/
+/capri-companion/dist/
+/capri-companion/release/

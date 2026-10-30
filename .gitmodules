@@ -1,0 +1,3 @@
+[submodule "capri-companion"]
+	path = capri-companion
+	url = https://github.com/TheAgencyMGE/capri-companion.git

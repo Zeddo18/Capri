@@ -1,27 +1,12 @@
 # Project status
 
-This repository is an early Windows desktop prototype. It is not yet a complete AI assistant.
+The repository now pins the upstream Capri Companion desktop app as a submodule. The older standalone window prototype is retained under `prototype/` for comparison.
 
-## Available in this prototype
+## Current state
 
-- Frameless, transparent, always-on-top Electron window.
-- Character image, idle motion, scanlines, and glitch-style teleport.
-- Basic chat panel that displays messages for the current session.
-- Narrow preload bridge with Electron context isolation enabled.
+- Upstream source commit pinned by `capri-companion/` submodule.
+- Launcher scripts are in the root `package.json`.
+- Owner-supplied reference images and their source notes remain under `assets/references/`.
+- Runtime dependencies are not installed yet, and the app has not been launched in this checkout.
 
-## Not implemented yet
-
-- AI model or local model connection.
-- Voice input or output.
-- Persistent chat, settings, reminders, or notes.
-- Computer-control actions.
-
-## Suggested development order
-
-1. Make the character and chat interaction stable, including window positioning and hide/show behavior.
-2. Add settings and local persistence with clear controls for model configuration.
-3. Add a model connection with explicit network and data-use disclosures.
-4. Add a small allowlisted set of PC actions. Require confirmation before consequential actions and provide a reliable stop control.
-5. Add voice and broader automation only after the permission model is clear.
-
-The reference images and their provenance notes are in `assets/references/`. Upstream Capri code is MIT-licensed according to its own repository, while its character design and artwork are excluded; review its license files before incorporating any upstream code into this project.
+The upstream app provides its own AI providers, offline command handling, voice support, desktop movement, and permission-gated PC actions. Read `capri-companion/docs/SECURITY.md` before enabling computer control. Its character artwork and traced model are excluded from the MIT code license; see `capri-companion/assets/capri/SOURCES.md`.

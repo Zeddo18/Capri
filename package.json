@@ -1,13 +1,13 @@
 {
-  "name": "capri-desktop-companion",
-  "version": "0.1.0",
+  "name": "capri-launcher",
+  "version": "0.2.0",
   "private": true,
-  "description": "An unofficial Capri-inspired Windows desktop companion",
-  "main": "src/main.cjs",
+  "description": "Launcher for the pinned Capri Companion desktop app",
   "scripts": {
-    "start": "electron ."
-  },
-  "devDependencies": {
-    "electron": "^45.0.0"
+    "setup:app": "git submodule update --init --recursive && npm --prefix capri-companion ci",
+    "start": "npm --prefix capri-companion start",
+    "build": "npm --prefix capri-companion run build",
+    "test": "npm --prefix capri-companion test",
+    "package:windows": "npm --prefix capri-companion run dist"
   }
 }

@@ -1,33 +1,51 @@
-# Capri Desktop Companion
+# Capri
 
-An unofficial, local desktop companion prototype inspired by the behavior of [Capri Companion](https://github.com/TheAgencyMGE/capri-companion): a small always-on-top character, a glitch teleport effect, and a lightweight chat panel.
+This repository pins the upstream [Capri Companion](https://github.com/TheAgencyMGE/capri-companion) desktop application as a Git submodule. It preserves the upstream source, dependency lockfile, tests, documentation, and license notices together. The submodule is pinned to a specific commit so updates are deliberate and reviewable.
 
-The current on-screen character uses a crop from the pose sheet supplied by the user. The additional supplied screenshots are kept in `assets/references/` for expressions, panel layout, desktop placement, and teleport timing. Attribution and the upstream repository's source notes are summarized in `assets/references/SOURCES.md`.
-
-## Project layout
-
-- `src/` — Electron main process, preload bridge, and UI.
-- `assets/references/` — owner-supplied visual references and source notes.
-- `docs/` — project documentation.
+> Unofficial fan project. Not affiliated with CD PROJEKT RED, Studio Trigger, or Netflix.
 
 ## Run on Windows
 
-Requires Node.js 22 or newer.
+Requires Windows 10/11 x64 and Node.js 22 or newer.
+
+For a fresh clone:
 
 ```powershell
-npm install
+git clone --recurse-submodules https://github.com/Zeddo18/Capri.git
+cd Capri
+npm run setup:app
 npm start
 ```
 
-Use `Ctrl+Alt+Space` to show or hide the companion, and `Ctrl+Alt+P` to teleport it. You can also use the tray menu. The chat currently records messages in the open session only; it is not connected to an AI provider and cannot control the PC.
+If you already cloned without submodules:
 
-## Current scope
+```powershell
+git submodule update --init --recursive
+npm run setup:app
+npm start
+```
 
-- Transparent, frameless, always-on-top desktop window
-- User-supplied pose-sheet sprite, character-only scanlines, idle motion, and teleport glitch
-- Chat panel shell and local session messages
-- Narrow preload bridge with context isolation enabled
+`setup:app` installs the submodule's locked dependencies. On first launch, Capri's own setup flow lets you choose Gemini, Ollama, another compatible model endpoint, or offline commands. Follow the upstream privacy and safety settings before enabling PC actions.
 
-AI, voice, settings, persistence, and computer-control tools are not implemented yet. Any later computer-control feature should require explicit per-task approval and a clear stop control.
+## Useful commands
 
-This is an unofficial fan-inspired project and is not affiliated with CD PROJEKT RED, Studio Trigger, Netflix, or the Capri Companion repository authors.
+| Command | Purpose |
+| --- | --- |
+| `npm run setup:app` | Initialize the pinned source and install its locked dependencies |
+| `npm start` | Build and launch the desktop companion |
+| `npm run build` | Build the Electron app without launching it |
+| `npm test` | Run the upstream unit tests |
+| `npm run package:windows` | Build the Windows installer |
+
+For the complete controls, setup guidance, and available features, see the [upstream README](https://github.com/TheAgencyMGE/capri-companion/blob/c094ec1/README.md). Security details are in the [upstream security guide](https://github.com/TheAgencyMGE/capri-companion/blob/c094ec1/docs/SECURITY.md).
+
+## Repository layout
+
+- `capri-companion/` — pinned upstream application source (Git submodule).
+- `assets/references/` — images supplied for this project, kept as reference material.
+- `docs/PROJECT_STATUS.md` — local integration notes and current state.
+- `prototype/` — the earlier standalone visual prototype, retained for comparison.
+
+## Licensing and artwork
+
+The upstream application code is MIT-licensed; see its [LICENSE](https://github.com/TheAgencyMGE/capri-companion/blob/c094ec1/LICENSE) and [third-party notices](https://github.com/TheAgencyMGE/capri-companion/blob/c094ec1/THIRD_PARTY_LICENSES.md). The upstream project explicitly states that Capri's character design and traced model artwork are not covered by that code license. Its [source notes](https://github.com/TheAgencyMGE/capri-companion/blob/c094ec1/assets/capri/SOURCES.md) remain with the pinned source. Do not redistribute its character model, artwork, or branding unless you have the necessary rights. The supplied reference images are credited separately in [`assets/references/SOURCES.md`](assets/references/SOURCES.md).
